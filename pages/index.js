@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Nav from '../components/nav'
+import { Button } from 'antd'
+import { Button as MButton } from 'antd-mobile'
 import '../styles/global.scss'
 import './styles.scss'
 
@@ -39,6 +41,10 @@ const Home = () => (
             <p>Was this tool helpful? Let us know how we can improve it!</p>
           </a>
         </Link>
+      </div>
+      <div>
+        <Button>确定</Button>
+        <MButton>取消</MButton>
       </div>
     </div>
   </div>
