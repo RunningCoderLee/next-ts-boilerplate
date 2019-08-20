@@ -1,0 +1,32 @@
+@import "../styles/mixin.scss";
+
+:global(body) {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
+    Helvetica, sans-serif;
+}
+.nav {
+  text-align: center;
+
+  > .ul {
+    padding: 4px 16px;
+  }
+}
+
+.ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.li {
+  display: flex;
+  padding: 6px 8px;
+}
+
+.a {
+  @include vertical-center();
+  
+  color: #067df7;
+  text-decoration: none;
+  font-size: 13px;
+}
