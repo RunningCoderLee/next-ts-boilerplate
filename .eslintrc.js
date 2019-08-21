@@ -1,4 +1,4 @@
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.ESLINT_ENV === 'production'
 
 const baseRules = {
   'import/no-unresolved': ['error', { commonjs: true, caseSensitive: true, ignore: ['-/'] }],
@@ -43,7 +43,8 @@ const baseRules = {
   'jsx-a11y/anchor-is-valid': ['error', { aspects: ['invalidHref', 'preferButton'] }],
 }
 
-const prodRules = Object.assign({}, baseRules, {
+const prodRules = {
+  ...baseRules,
   // '@typescript-eslint/no-unused-vars': [
   //   'error',
   //   {
@@ -60,7 +61,7 @@ const prodRules = Object.assign({}, baseRules, {
       allow: ['warn', 'error'],
     },
   ],
-})
+}
 
 module.exports = {
   root: true,
@@ -93,9 +94,12 @@ module.exports = {
         tsconfigRootDir: './',
         // extraFileExtensions: ['.vue'],
       },
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'error',
+      },
     },
     {
-      files: ['*.js', '*.jsx'],
+      files: ['*.js', '*.jsx', '!.eslintrc.js'],
       parser: 'babel-eslint',
     },
   ],

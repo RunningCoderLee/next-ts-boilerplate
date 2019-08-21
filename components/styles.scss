@@ -1,21 +1,21 @@
-@import "../styles/mixin.scss";
+@import '../styles/mixin';
 
 :global(body) {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-    Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
 }
+
+.ul {
+  display: flex;
+  justify-content: space-between;
+}
+
 .nav {
   text-align: center;
 
   > .ul {
     padding: 4px 16px;
   }
-}
-
-.ul {
-  display: flex;
-  justify-content: space-between;
 }
 
 .li {
@@ -25,8 +25,8 @@
 
 .a {
   @include vertical-center();
-  
+
   color: #067df7;
-  text-decoration: none;
   font-size: 13px;
+  text-decoration: none;
 }
