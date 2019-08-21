@@ -1,7 +1,9 @@
-var cssLoaderConfig = require('@zeit/next-css/css-loader-config')
+/* eslint-disable no-param-reassign */
+const cssLoaderConfig = require('@zeit/next-css/css-loader-config')
 
 module.exports = (nextConfig = {}) => {
-  return Object.assign({}, nextConfig, {
+  return {
+    ...nextConfig,
     webpack(config, options) {
       if (!options.defaultLoaders) {
         throw new Error(
@@ -94,8 +96,10 @@ module.exports = (nextConfig = {}) => {
 
         const origExternals = [...config.externals]
         config.externals = [
+          // eslint-disable-next-line consistent-return
           (context, request, callback) => {
             if (request.match(antStyles) || request.match(antMobileStyles)) return callback()
+
             if (typeof origExternals[0] === 'function') {
               origExternals[0](context, request, callback)
             } else {
@@ -123,5 +127,5 @@ module.exports = (nextConfig = {}) => {
 
       return config
     },
-  })
+  }
 }

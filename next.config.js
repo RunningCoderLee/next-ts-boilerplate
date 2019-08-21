@@ -3,6 +3,7 @@ const withSass = require('@zeit/next-sass')
 const path = require('path')
 const withAlias = require('./plugins/withAlias')
 const withAntD = require('./plugins/withAntD')
+const withESLint = require('./plugins/withESLint')
 
 const nextConfig = {
   // distDir: 'build',
@@ -31,6 +32,7 @@ module.exports = withPlugins(
       },
     ],
     withAntD,
+    withESLint,
   ],
   nextConfig
 )

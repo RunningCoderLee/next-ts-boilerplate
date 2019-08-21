@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
-import Nav from '-/components/nav'
 import { Button } from 'antd'
 import { Button as MButton, Slider } from 'antd-mobile'
+import Nav from '-/components/nav'
 import '../styles/global.scss'
 import './styles.scss'
 
-const Home = () => (
+const Home = (): ReactElement => (
   <div>
     <Head>
       <title>Home</title>
@@ -15,7 +15,7 @@ const Home = () => (
 
     <Nav />
     <div>
-      <img src="/static/images/bg.png" />
+      <img src="/static/images/bg.png" alt="bg" />
     </div>
     <div className="hero">
       <h1 className="title">Welcome to Next.js!</h1>

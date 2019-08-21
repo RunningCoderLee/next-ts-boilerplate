@@ -1,5 +1,6 @@
 module.exports = (nextConfig = {}) => {
-  return Object.assign({}, nextConfig, {
+  return {
+    ...nextConfig,
     webpack(config, options) {
       if (!options.defaultLoaders) {
         throw new Error(
@@ -10,7 +11,7 @@ module.exports = (nextConfig = {}) => {
       const { alias: originalAlias } = config.resolve
       const { alias } = nextConfig
 
-      config.resolve.alias = Object.assign({}, originalAlias, alias)
+      config.resolve.alias = { ...originalAlias, ...alias }
 
       if (typeof nextConfig.webpack === 'function') {
         return nextConfig.webpack(config, options)
@@ -18,5 +19,5 @@ module.exports = (nextConfig = {}) => {
 
       return config
     },
-  })
+  }
 }
