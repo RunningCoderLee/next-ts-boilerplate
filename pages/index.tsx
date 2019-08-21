@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Nav from '-/components/nav'
 import { Button } from 'antd'
-import { Button as MButton } from 'antd-mobile'
+import { Button as MButton, Slider } from 'antd-mobile'
 import '../styles/global.scss'
 import './styles.scss'
 
@@ -42,9 +42,10 @@ const Home = () => (
           </a>
         </Link>
       </div>
-      <div>
+      <div style={{ width: '80%', margin: '10px auto', paddingBottom: '100px' }}>
         <Button>确定</Button>
         <MButton>取消</MButton>
+        <Slider />
       </div>
     </div>
   </div>
