@@ -65,7 +65,24 @@ const prodRules = {
 
 module.exports = {
   root: true,
-  extends: ['airbnb', 'airbnb/hooks', 'prettier', 'prettier/@typescript-eslint', 'prettier/react'],
+  extends: [
+    'airbnb',
+    'airbnb/hooks',
+    // 'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react',
+  ],
+  // parser: '@typescript-eslint/parser',
+  // parserOptions: {
+  //   ecmaFeatures: {
+  //     jsx: true,
+  //   },
+  //   useJSXTextNode: true,
+  //   project: './tsconfig.json',
+  //   tsconfigRootDir: './',
+  //   // extraFileExtensions: ['.vue'],
+  // },
   env: {
     browser: true,
     es6: true,
@@ -82,7 +99,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.ts', '*.tsx'],
+      files: ['**/*.ts', '**/*.tsx'],
       extends: ['plugin:@typescript-eslint/recommended'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
@@ -99,7 +116,7 @@ module.exports = {
       },
     },
     {
-      files: ['*.js', '*.jsx', '!.eslintrc.js'],
+      files: ['*.js', '*.jsx'],
       parser: 'babel-eslint',
     },
   ],

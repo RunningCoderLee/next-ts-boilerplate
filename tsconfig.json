@@ -41,7 +41,6 @@
     "jest",
     "src/setupTests.ts",
     "tslint:latest",
-    "tslint-config-prettier",
     "next.config.js"
   ]
 }
